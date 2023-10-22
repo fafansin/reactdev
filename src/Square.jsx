@@ -1,12 +1,15 @@
-import s from './Square.module.css';
+import { useState } from 'react';
+import './Square.css';
 
-export default function Square({value}) {
+export default function Square() {
+    const [value, setValue] = useState(null);
+
     function handleClick(){
-        console.log('clicked!');
+        setValue("X");
     }
     return (
         <button 
-        className={s.square}
+        className="square"
         onClick={handleClick}
         >{value}</button>
     )
